@@ -51,7 +51,7 @@ namespace Game_of_Life
 
         public void refreshUniverse(Universe newUniverse)
         {
-            this.Map = newUniverse.Map;
+            Map = newUniverse.Map;
         }
 
         public void nextGeneration()
@@ -61,7 +61,7 @@ namespace Game_of_Life
             foreach (KeyValuePair<Point, bool> cell in Map)
             {
                 int neighbourhoods = countNeighbourhoods(cell.Key);
-                if(cell.Value == true)
+                if(cell.Value)
                 {
                     if (neighbourhoods == 2 || neighbourhoods == 3)
                         newUniverse.setAlive(cell.Key, true); //przetrwanie
